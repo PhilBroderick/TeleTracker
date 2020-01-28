@@ -1,3 +1,5 @@
+import { Show } from "./../../core/models/show.model";
+import { ShowService } from "./../../core/services/show.service";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
@@ -7,9 +9,17 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./show-detail.component.css"]
 })
 export class ShowDetailComponent implements OnInit {
-  constructor(private route: ActivatedRoute) {}
+  show: Show;
+
+  constructor(
+    private route: ActivatedRoute,
+    private showService: ShowService
+  ) {}
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get("id");
+    this.showService.getShow(id).subscribe(show => {
+      this.show = show;
+    });
   }
 }

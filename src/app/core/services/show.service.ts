@@ -18,4 +18,8 @@ export class ShowService {
   getShows = (): Observable<Show[]> => {
     return this.http.get<Show[]>(this.showUrl);
   };
+
+  getShow = (id: string): Observable<Show> => {
+    return this.http.get<Show>(`${this.showUrl}/${id}`);
+  };
 }
