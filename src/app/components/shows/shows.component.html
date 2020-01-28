@@ -1,0 +1,11 @@
+<div class="row">
+  <ul class="list-unstyled" *ngIf="shows?.length > 0">
+    <li *ngFor="let show of shows">
+      <h3>
+        {{ show.title }}
+      </h3>
+    </li>
+  </ul>
+
+  <h4 *ngIf="!loaded">Loading shows...</h4>
+</div>
