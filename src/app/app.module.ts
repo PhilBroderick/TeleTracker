@@ -1,9 +1,9 @@
+import { NotFoundComponent } from "./shared/components/not-found/not-found.component";
 import { LoaderComponent } from "./shared/components/loader/loader.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
 import { AppComponent } from "./app.component";
-import { ShowComponent } from "./components/show/show.component";
 import { ShowDetailComponent } from "./components/show-detail/show-detail.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { HomeComponent } from "./components/home/home.component";
@@ -17,13 +17,13 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 @NgModule({
   declarations: [
     AppComponent,
-    ShowComponent,
     ShowDetailComponent,
     HomeComponent,
     NavbarComponent,
     DiscoverComponent,
     ShowsComponent,
-    LoaderComponent
+    LoaderComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
