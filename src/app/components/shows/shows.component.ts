@@ -1,5 +1,5 @@
-import { ShowService } from "./../../services/show.service";
-import { Show } from "./../../models/show.model";
+import { ShowService } from "../../core/services/show.service";
+import { Show } from "../../core/models/show.model";
 import { Component, OnInit } from "@angular/core";
 
 @Component({

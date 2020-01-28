@@ -1,3 +1,4 @@
+import { LoaderComponent } from "./shared/components/loader/loader.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
@@ -10,6 +11,8 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 import { DiscoverComponent } from "./components/discover/discover.component";
 import { ShowsComponent } from "./components/shows/shows.component";
 import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -19,9 +22,16 @@ import { HttpClientModule } from "@angular/common/http";
     HomeComponent,
     NavbarComponent,
     DiscoverComponent,
-    ShowsComponent
+    ShowsComponent,
+    LoaderComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
