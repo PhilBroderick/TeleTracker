@@ -1,1 +1,25 @@
-<p>navbar works!</p>
+<div class="navbar navbar-expand navbar-dark bg-primary mb4">
+  <div class="container">
+    <a routerLink="/" class="navbar-brand"
+      >TeleTracker <i class="fas fa-tv"></i
+    ></a>
+    <div>
+      <ul class="navbar-nav ml-auto">
+        <li
+          class="nav-item"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/" class="nav-link">Home</a>
+        </li>
+        <li
+          class="nav-item"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/discover" class="nav-link">Discover</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

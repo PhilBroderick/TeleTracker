@@ -7,6 +7,7 @@ import { ShowDetailComponent } from './components/show-detail/show-detail.compon
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { DiscoverComponent } from './components/discover/discover.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ShowComponent,
     ShowDetailComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    DiscoverComponent
   ],
   imports: [
     BrowserModule,
