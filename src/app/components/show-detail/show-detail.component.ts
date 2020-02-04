@@ -18,7 +18,7 @@ export class ShowDetailComponent implements OnInit {
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get("id");
-    this.showService.getShow(id).subscribe(show => {
+    this.showService.getShow(id.toString()).subscribe(show => {
       this.show = show;
     });
   }

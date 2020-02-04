@@ -13,6 +13,8 @@ import { ShowsComponent } from "./components/shows/shows.component";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatTabsModule } from "@angular/material/tabs";
+import { SeasonComponent } from "./components/season/season.component";
 
 @NgModule({
   declarations: [
@@ -23,14 +25,16 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
     DiscoverComponent,
     ShowsComponent,
     LoaderComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SeasonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

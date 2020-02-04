@@ -1,1 +1,11 @@
-<p>show-detail works!</p>
+<div class="row justify-content-center" *ngIf="show !== undefined">
+  <h3>{{ show.title }}</h3>
+</div>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab *ngIf="show?.seasons.length > 0" label="Seasons">
+    <ul *ngFor="let season of show.seasons">
+      <app-season [season]="season"></app-season>
+    </ul>
+  </mat-tab>
+  <mat-tab label="Reviews"> </mat-tab>
+</mat-tab-group>

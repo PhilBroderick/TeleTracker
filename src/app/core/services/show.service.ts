@@ -11,7 +11,7 @@ const httpOptions = {
   providedIn: "root"
 })
 export class ShowService {
-  showUrl: string = "https://localhost:44396/api/shows";
+  showUrl: string = "https://teletracker.azurewebsites.net/api/shows";
 
   constructor(private http: HttpClient) {}
 
