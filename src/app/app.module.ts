@@ -1,3 +1,5 @@
+import { LoginComponent } from "./components/login/login.component";
+import { AuthService } from "./core/services/auth.service";
 import { NotFoundComponent } from "./shared/components/not-found/not-found.component";
 import { LoaderComponent } from "./shared/components/loader/loader.component";
 import { BrowserModule } from "@angular/platform-browser";
@@ -15,6 +17,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatTabsModule } from "@angular/material/tabs";
 import { SeasonComponent } from "./components/season/season.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { SeasonComponent } from "./components/season/season.component";
     ShowsComponent,
     LoaderComponent,
     NotFoundComponent,
-    SeasonComponent
+    SeasonComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +38,10 @@ import { SeasonComponent } from "./components/season/season.component";
     HttpClientModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
-    MatTabsModule
+    MatTabsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

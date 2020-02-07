@@ -1,3 +1,4 @@
+import { LoginComponent } from "./components/login/login.component";
 import { ShowDetailComponent } from "./components/show-detail/show-detail.component";
 import { NotFoundComponent } from "./shared/components/not-found/not-found.component";
 import { DiscoverComponent } from "./components/discover/discover.component";
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "discover", component: DiscoverComponent },
   { path: "show/:id", component: ShowDetailComponent },
+  { path: "login", component: LoginComponent },
   { path: "**", component: NotFoundComponent }
 ];
 

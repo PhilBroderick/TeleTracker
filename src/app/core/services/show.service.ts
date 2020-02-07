@@ -1,3 +1,4 @@
+import { environment } from "./../../../environments/environment";
 import { Show } from "../models/show.model";
 import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
@@ -11,7 +12,7 @@ const httpOptions = {
   providedIn: "root"
 })
 export class ShowService {
-  showUrl: string = "https://teletracker.azurewebsites.net/api/shows";
+  showUrl = environment.baseApiUrl + "shows";
 
   constructor(private http: HttpClient) {}
 
