@@ -8,10 +8,10 @@ import { Component, OnInit } from "@angular/core";
 })
 export class NavbarComponent implements OnInit {
   constructor(private authService: AuthService) {}
-
+  loggedUser: string = sessionStorage.getItem("loggedUser");
   ngOnInit() {}
 
-  isLoggedIn = this.authService.isLoggedIn();
-
   logout = () => this.authService.logout();
+
+  isLoggedIn = () => !!localStorage.getItem("token");
 }
