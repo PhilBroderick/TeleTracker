@@ -1,3 +1,4 @@
+import { RegisterComponent } from "./components/register/register.component";
 import { LoginComponent } from "./components/login/login.component";
 import { AuthService } from "./core/services/auth.service";
 import { NotFoundComponent } from "./shared/components/not-found/not-found.component";
@@ -30,7 +31,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     LoaderComponent,
     NotFoundComponent,
     SeasonComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
