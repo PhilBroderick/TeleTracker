@@ -36,4 +36,12 @@ export class AuthService {
     localStorage.removeItem("token");
     sessionStorage.removeItem("loggedUser");
   };
+
+
+  register = (username: string, password: string) => {
+    return this.http.post(this.authUrl + "register", {
+      username: username,
+      password: password
+    });
+  }
 }

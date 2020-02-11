@@ -39,17 +39,23 @@ export class RegisterComponent implements OnInit {
         ],
         confirmPassword: ["", Validators.required]
       },
-      this.passwordMatchValidator
+      { validator: this.passwordMatchValidator }
     );
   }
 
   passwordMatchValidator(g: FormGroup) {
-    console.log(g.get("password").value);
-    console.log(g.get("confirmPassword").value);
     return g.get("password").value === g.get("confirmPassword").value
       ? null
       : { mismatch: true };
   }
 
-  register = () => {};
+  register = () => {
+    this.authService.register(this.registerForm.value.username, this.registerForm.value.password).subscribe(() => {
+      this.router.navigate(["/"]);
+    }, err=> console.log(err), () => {
+      this.authService.login(this.registerForm.value.username, this.registerForm.value.password).subscribe(() => {
+        this.router.navigate(["/"]);
+      })
+    })
+  };
 }
