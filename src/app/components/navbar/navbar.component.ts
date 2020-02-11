@@ -7,11 +7,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./navbar.component.css"]
 })
 export class NavbarComponent implements OnInit {
-  constructor(private authService: AuthService) {}
-  loggedUser: string = sessionStorage.getItem("loggedUser");
+  constructor(public authService: AuthService) {}
   ngOnInit() {}
 
   logout = () => this.authService.logout();
 
-  isLoggedIn = () => !!localStorage.getItem("token");
+  isLoggedIn = () => this.authService.loggedIn();
 }

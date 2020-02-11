@@ -1,3 +1,4 @@
+import { ErrorInterceptorProvider } from "./core/services/error.interceptor";
 import { RegisterComponent } from "./components/register/register.component";
 import { LoginComponent } from "./components/login/login.component";
 import { AuthService } from "./core/services/auth.service";
@@ -43,7 +44,7 @@ import { ReactiveFormsModule } from "@angular/forms";
     MatTabsModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, ErrorInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -42,7 +42,8 @@
             [routerLinkActiveOptions]="{ exact: true }"
           >
             <a routerLink="/profile" class="nav-link"
-              >Welcome {{ loggedUser }}</a
+              >Welcome
+              {{ authService.decodedToken?.unique_name | titlecase }}</a
             >
           </li>
           <li
