@@ -10,7 +10,7 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class ShowDetailComponent implements OnInit {
   show: Show;
-
+  backgroundUrl = "";
   constructor(
     private route: ActivatedRoute,
     private showService: ShowService
@@ -20,6 +20,9 @@ export class ShowDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get("id");
     this.showService.getShow(id.toString()).subscribe(show => {
       this.show = show;
+      this.backgroundUrl = show.posterPath;
     });
   }
+
+  getUrl = () => `url('${this.backgroundUrl}')`;
 }

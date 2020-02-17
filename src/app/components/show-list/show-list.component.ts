@@ -13,14 +13,14 @@ export class ShowListComponent implements OnInit {
   constructor(private showService: ShowService) {}
 
   ngOnInit() {
-    setTimeout(this.getShows, 3000);
+    setTimeout(this.getShows, 0);
   }
 
   getShows = () => {
     this.showService.getPopularShows().subscribe(
       shows => {
         this.shows = shows.sort((a, b) =>
-          a.Popularity > b.Popularity ? -1 : 1
+          a.popularity > b.popularity ? -1 : 1
         );
         this.loaded = true;
       },

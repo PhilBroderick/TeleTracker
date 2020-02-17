@@ -1,3 +1,4 @@
+import { ReadMorePipe } from "./shared/pipes/read-more.pipe";
 import { ErrorInterceptorProvider } from "./core/services/error.interceptor";
 import { RegisterComponent } from "./components/register/register.component";
 import { LoginComponent } from "./components/login/login.component";
@@ -20,7 +21,7 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatTabsModule } from "@angular/material/tabs";
 import { SeasonComponent } from "./components/season/season.component";
 import { ReactiveFormsModule } from "@angular/forms";
-import { ShowListComponent } from './components/show-list/show-list.component';
+import { ShowListComponent } from "./components/show-list/show-list.component";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ShowListComponent } from './components/show-list/show-list.component';
     SeasonComponent,
     LoginComponent,
     RegisterComponent,
-    ShowListComponent
+    ShowListComponent,
+    ReadMorePipe
   ],
   imports: [
     BrowserModule,

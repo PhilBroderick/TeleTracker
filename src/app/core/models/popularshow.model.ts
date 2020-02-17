@@ -1,9 +1,9 @@
 export interface PopularShow {
   id: string;
   name: string;
-  Overview: string;
-  FirstAirDate: Date;
-  PosterPath: string;
-  VoteAverage: number;
-  Popularity: number;
+  overview: string;
+  firstAirDate: Date;
+  posterPath: string;
+  voteAverage: number;
+  popularity: number;
 }
