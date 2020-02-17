@@ -8,4 +8,5 @@ export interface Show {
   posterPath: string;
   voteAverage: number;
   popularity: number;
+  genres: string[];
 }
