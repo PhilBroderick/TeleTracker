@@ -9,7 +9,7 @@ import { Component, OnInit } from "@angular/core";
 })
 export class ShowsComponent implements OnInit {
   shows: Show[];
-  loaded: boolean = false;
+  loaded = false;
 
   constructor(private showService: ShowService) {}
 

@@ -20,6 +20,7 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatTabsModule } from "@angular/material/tabs";
 import { SeasonComponent } from "./components/season/season.component";
 import { ReactiveFormsModule } from "@angular/forms";
+import { ShowListComponent } from './components/show-list/show-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     NotFoundComponent,
     SeasonComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ShowListComponent
   ],
   imports: [
     BrowserModule,

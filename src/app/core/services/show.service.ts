@@ -3,6 +3,7 @@ import { Show } from "../models/show.model";
 import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { PopularShow } from "../models/popularshow.model";
 
 const httpOptions = {
   headers: new HttpHeaders({ "Content-Type": "application/json" })
@@ -22,5 +23,9 @@ export class ShowService {
 
   getShow = (id: string): Observable<Show> => {
     return this.http.get<Show>(`${this.showUrl}/${id}`);
+  };
+
+  getPopularShows = (): Observable<PopularShow[]> => {
+    return this.http.get<PopularShow[]>(`${this.showUrl}/popular`);
   };
 }
