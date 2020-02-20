@@ -11,10 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ShowDetailComponent implements OnInit {
   show: Show;
   backgroundUrl = '';
-  constructor(
-    private route: ActivatedRoute,
-    private showService: ShowService
-  ) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.data.subscribe(data => {

@@ -1,3 +1,4 @@
+import { AuthGuard } from './shared/guards/auth.guard';
 import { ShowListResolver } from './shared/resolvers/show-list.resolver';
 import { ShowDetailResolver } from './shared/resolvers/show-detail.resolver';
 import { RegisterComponent } from './components/register/register.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {
     path: 'show/:id',
     component: ShowDetailComponent,
+    canActivate: [AuthGuard],
     resolve: { show: ShowDetailResolver }
   },
   { path: 'login', component: LoginComponent },

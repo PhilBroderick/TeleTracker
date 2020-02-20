@@ -1,19 +1,15 @@
-import { environment } from "./../../../environments/environment";
-import { Show } from "../models/show.model";
-import { Observable } from "rxjs";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { PopularShow } from "../models/popularshow.model";
-
-const httpOptions = {
-  headers: new HttpHeaders({ "Content-Type": "application/json" })
-};
+import { environment } from './../../../environments/environment';
+import { Show } from '../models/show.model';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { PopularShow } from '../models/popularshow.model';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class ShowService {
-  showUrl = environment.baseApiUrl + "shows";
+  showUrl = environment.baseApiUrl + 'shows';
 
   constructor(private http: HttpClient) {}
 

@@ -1,3 +1,5 @@
+import { AuthGuard } from './shared/guards/auth.guard';
+import { environment } from './../environments/environment';
 import { ShowListResolver } from './shared/resolvers/show-list.resolver';
 import { ShowDetailResolver } from './shared/resolvers/show-detail.resolver';
 import { ReadMorePipe } from './shared/pipes/read-more.pipe';
@@ -9,6 +11,7 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppComponent } from './app.component';
 import { ShowDetailComponent } from './components/show-detail/show-detail.component';
@@ -25,6 +28,9 @@ import { SeasonComponent } from './components/season/season.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShowListComponent } from './components/show-list/show-list.component';
 
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,13 +54,21 @@ import { ShowListComponent } from './components/show-list/show-list.component';
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatTabsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: [environment.whitelist],
+        blacklistedRoutes: [`${environment.whitelist}/api/auth`]
+      }
+    })
   ],
   providers: [
     AuthService,
     ErrorInterceptorProvider,
     ShowDetailResolver,
-    ShowListResolver
+    ShowListResolver,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
