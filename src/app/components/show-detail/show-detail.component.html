@@ -7,12 +7,12 @@
 </div>
 <div class="show-detail">
   <p class="mt-3">
-    <i>{{ show?.firstAirDate | date }}</i> - {{ show?.genres.join(", ") }}
+    <i>{{ show.firstAirDate | date }}</i> - {{ show.genres.join(', ') }}
   </p>
-  <p>{{ show?.overview }}</p>
+  <p>{{ show.overview }}</p>
 </div>
 <mat-tab-group mat-align-tabs="center">
-  <mat-tab *ngIf="show?.seasons.length > 0" label="Seasons">
+  <mat-tab *ngIf="show.seasons.length > 0" label="Seasons">
     <ul *ngFor="let season of show.seasons">
       <app-season [season]="season"></app-season>
     </ul>

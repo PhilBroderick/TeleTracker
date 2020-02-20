@@ -1,27 +1,29 @@
-import { ReadMorePipe } from "./shared/pipes/read-more.pipe";
-import { ErrorInterceptorProvider } from "./core/services/error.interceptor";
-import { RegisterComponent } from "./components/register/register.component";
-import { LoginComponent } from "./components/login/login.component";
-import { AuthService } from "./core/services/auth.service";
-import { NotFoundComponent } from "./shared/components/not-found/not-found.component";
-import { LoaderComponent } from "./shared/components/loader/loader.component";
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { ShowListResolver } from './shared/resolvers/show-list.resolver';
+import { ShowDetailResolver } from './shared/resolvers/show-detail.resolver';
+import { ReadMorePipe } from './shared/pipes/read-more.pipe';
+import { ErrorInterceptorProvider } from './core/services/error.interceptor';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './core/services/auth.service';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { LoaderComponent } from './shared/components/loader/loader.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import { AppComponent } from "./app.component";
-import { ShowDetailComponent } from "./components/show-detail/show-detail.component";
-import { AppRoutingModule } from "./app-routing.module";
-import { HomeComponent } from "./components/home/home.component";
-import { NavbarComponent } from "./components/navbar/navbar.component";
-import { DiscoverComponent } from "./components/discover/discover.component";
-import { ShowsComponent } from "./components/shows/shows.component";
-import { HttpClientModule } from "@angular/common/http";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
-import { MatTabsModule } from "@angular/material/tabs";
-import { SeasonComponent } from "./components/season/season.component";
-import { ReactiveFormsModule } from "@angular/forms";
-import { ShowListComponent } from "./components/show-list/show-list.component";
+import { AppComponent } from './app.component';
+import { ShowDetailComponent } from './components/show-detail/show-detail.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { DiscoverComponent } from './components/discover/discover.component';
+import { ShowsComponent } from './components/shows/shows.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTabsModule } from '@angular/material/tabs';
+import { SeasonComponent } from './components/season/season.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ShowListComponent } from './components/show-list/show-list.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,12 @@ import { ShowListComponent } from "./components/show-list/show-list.component";
     MatTabsModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, ErrorInterceptorProvider],
+  providers: [
+    AuthService,
+    ErrorInterceptorProvider,
+    ShowDetailResolver,
+    ShowListResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

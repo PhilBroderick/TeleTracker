@@ -1,6 +1,6 @@
-<div class="row justify-content-around mt-5" *ngIf="shows?.length > 0">
+<div class="row justify-content-around mt-5" *ngIf="shows.length > 0">
   <div class="card col-md-3 mb-2" *ngFor="let show of shows">
-    <img class="card-img-top" src="{{ show?.posterPath }}" />
+    <img class="card-img-top" src="{{ show.posterPath }}" />
     <div class="card-body">
       <h5 class="card-title">{{ show.name }}</h5>
       <p class="card-text">{{ show.overview | readMore }}</p>

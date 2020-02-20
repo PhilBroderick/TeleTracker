@@ -1,26 +1,25 @@
-import { Show } from "./../../core/models/show.model";
-import { ShowService } from "./../../core/services/show.service";
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { Show } from './../../core/models/show.model';
+import { ShowService } from './../../core/services/show.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: "app-show-detail",
-  templateUrl: "./show-detail.component.html",
-  styleUrls: ["./show-detail.component.css"]
+  selector: 'app-show-detail',
+  templateUrl: './show-detail.component.html',
+  styleUrls: ['./show-detail.component.css']
 })
 export class ShowDetailComponent implements OnInit {
   show: Show;
-  backgroundUrl = "";
+  backgroundUrl = '';
   constructor(
     private route: ActivatedRoute,
     private showService: ShowService
   ) {}
 
   ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get("id");
-    this.showService.getShow(id.toString()).subscribe(show => {
-      this.show = show;
-      this.backgroundUrl = show.posterPath;
+    this.route.data.subscribe(data => {
+      this.show = data['show'];
+      this.backgroundUrl = this.show.posterPath;
     });
   }
 
