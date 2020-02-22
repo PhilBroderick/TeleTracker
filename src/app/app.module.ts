@@ -1,3 +1,4 @@
+import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { environment } from './../environments/environment';
 import { ShowListResolver } from './shared/resolvers/show-list.resolver';
@@ -45,7 +46,8 @@ export function tokenGetter() {
     LoginComponent,
     RegisterComponent,
     ShowListComponent,
-    ReadMorePipe
+    ReadMorePipe,
+    MovieListComponent
   ],
   imports: [
     BrowserModule,

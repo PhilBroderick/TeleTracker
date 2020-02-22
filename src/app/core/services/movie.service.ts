@@ -17,4 +17,7 @@ export class MovieService {
 
   getMovie = (id: string): Observable<Movie> =>
     this.httpClient.get<Movie>(`${this.movieUrl}/${id}`);
+
+  getPopularMovies = (): Observable<Movie[]> =>
+    this.httpClient.get<Movie[]>(`${this.movieUrl}/popular`);
 }
