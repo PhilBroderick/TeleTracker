@@ -1,3 +1,4 @@
+import { UserService } from './core/services/user.service';
 import { MovieDetailResolver } from './shared/resolvers/movie-detail.resolver';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
@@ -70,6 +71,7 @@ export function tokenGetter() {
   ],
   providers: [
     AuthService,
+    UserService,
     ErrorInterceptorProvider,
     ShowDetailResolver,
     ShowListResolver,

@@ -1,3 +1,4 @@
+import { UserService } from './../../core/services/user.service';
 import { ShowService } from './../../core/services/show.service';
 import { PopularShow } from './../../core/models/popularshow.model';
 import { Component, OnInit, Input } from '@angular/core';
@@ -11,9 +12,14 @@ import { Observable } from 'rxjs';
 })
 export class ShowListComponent implements OnInit {
   shows: Observable<PopularShow[]>;
-  constructor(private showService: ShowService) {}
+  constructor(
+    private showService: ShowService,
+    public userService: UserService
+  ) {}
 
   ngOnInit() {
     this.shows = this.showService.getPopularShows();
   }
+
+  subscribeToShow = (id: string) => this.userService.subscribeToShow(id);
 }
