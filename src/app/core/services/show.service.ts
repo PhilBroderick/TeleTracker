@@ -1,3 +1,4 @@
+import { SubscribeResponse } from './../models/subscribe-response.model';
 import { environment } from './../../../environments/environment';
 import { Show } from '../models/show.model';
 import { Observable } from 'rxjs';
@@ -23,5 +24,20 @@ export class ShowService {
 
   getPopularShows = (): Observable<PopularShow[]> => {
     return this.http.get<PopularShow[]>(`${this.showUrl}/popular`);
+  };
+
+  subscribeToShow = (id: string): Observable<SubscribeResponse> => {
+    return this.http.post<SubscribeResponse>(
+      `${this.showUrl}/${id}/subscribe`,
+      null
+    );
+  };
+
+  getSubscribedShows = (): Observable<string[]> => {
+    return this.http.get<string[]>(`${this.showUrl}/subscribed`);
+  };
+
+  isSubscribedToShow = (id: string): Observable<boolean> => {
+    return this.http.get<boolean>(`${this.showUrl}/${id}/issubscribed`);
   };
 }

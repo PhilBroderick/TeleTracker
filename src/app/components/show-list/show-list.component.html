@@ -6,7 +6,7 @@
     <img class="card-img-top" src="{{ show.posterPath }}" />
     <i
       class="fa-check-circle fa-2x subscribe"
-      [ngClass]="userService.isSubscribedToShow() === true ? 'fas' : 'far'"
+      [ngClass]="true ? 'fas' : 'far'"
       (click)="subscribeToShow(show.id)"
     ></i>
     <div class="card-body">

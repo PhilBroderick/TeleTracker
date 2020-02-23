@@ -6,8 +6,4 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
   constructor(private httpClient: HttpClient) {}
-
-  isSubscribedToShow = (id: string) => false;
-
-  subscribeToShow = (id: string) => console.log(true);
 }

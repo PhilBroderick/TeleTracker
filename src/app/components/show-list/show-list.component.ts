@@ -12,14 +12,16 @@ import { Observable } from 'rxjs';
 })
 export class ShowListComponent implements OnInit {
   shows: Observable<PopularShow[]>;
-  constructor(
-    private showService: ShowService,
-    public userService: UserService
-  ) {}
+  constructor(public showService: ShowService) {}
 
   ngOnInit() {
     this.shows = this.showService.getPopularShows();
   }
 
-  subscribeToShow = (id: string) => this.userService.subscribeToShow(id);
+  subscribeToShow = (id: string) =>
+    this.showService.subscribeToShow(id).subscribe(data => {
+      if (data.entityID !== null) {
+        return true;
+      }
+    });
 }
