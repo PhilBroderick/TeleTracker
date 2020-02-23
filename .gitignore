@@ -50,3 +50,4 @@ src/environments/environment.prod.ts
 src/environments/environment.ts
 .editorconfig
 tslint.json
+.vscode/launch.json

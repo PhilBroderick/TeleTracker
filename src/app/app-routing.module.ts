@@ -1,3 +1,5 @@
+import { MovieDetailResolver } from './shared/resolvers/movie-detail.resolver';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { ShowListResolver } from './shared/resolvers/show-list.resolver';
 import { ShowDetailResolver } from './shared/resolvers/show-detail.resolver';
@@ -18,6 +20,12 @@ const routes: Routes = [
     component: ShowDetailComponent,
     canActivate: [AuthGuard],
     resolve: { show: ShowDetailResolver }
+  },
+  {
+    path: 'movie/:id',
+    component: MovieDetailComponent,
+    canActivate: [AuthGuard],
+    resolve: { movie: MovieDetailResolver }
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

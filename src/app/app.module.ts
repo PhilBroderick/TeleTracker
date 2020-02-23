@@ -1,3 +1,5 @@
+import { MovieDetailResolver } from './shared/resolvers/movie-detail.resolver';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { environment } from './../environments/environment';
@@ -47,7 +49,8 @@ export function tokenGetter() {
     RegisterComponent,
     ShowListComponent,
     ReadMorePipe,
-    MovieListComponent
+    MovieListComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -70,6 +73,7 @@ export function tokenGetter() {
     ErrorInterceptorProvider,
     ShowDetailResolver,
     ShowListResolver,
+    MovieDetailResolver,
     AuthGuard
   ],
   bootstrap: [AppComponent]
