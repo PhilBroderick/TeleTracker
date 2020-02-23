@@ -9,31 +9,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./show-list.component.css']
 })
 export class ShowListComponent implements OnInit {
-  shows: PopularShow[];
   loaded = false;
   constructor(
     private showService: ShowService,
     private route: ActivatedRoute
   ) {}
-
-  ngOnInit() {
-    this.route.data.subscribe(data => {
-      this.shows = data['shows'].sort((a: PopularShow, b: PopularShow) =>
-        a.popularity > b.popularity ? -1 : 1
-      );
-      this.loaded = true;
-    });
-  }
-
-  getShows = () => {
-    this.showService.getPopularShows().subscribe(
-      shows => {
-        this.shows = shows.sort((a, b) =>
-          a.popularity > b.popularity ? -1 : 1
-        );
-        this.loaded = true;
-      },
-      err => console.log(err)
-    );
-  };
+  shows = this.showService.getPopularShows();
+  ngOnInit() {}
 }

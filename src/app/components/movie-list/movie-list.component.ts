@@ -8,17 +8,7 @@ import { Movie } from 'src/app/core/models/movie.model';
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent implements OnInit {
-  movies: Movie[];
-  loaded = false;
   constructor(private movieService: MovieService) {}
-
-  ngOnInit() {
-    this.movieService.getPopularMovies().subscribe(
-      movies => {
-        this.movies = movies;
-        this.loaded = true;
-      },
-      err => console.log(err)
-    );
-  }
+  movies = this.movieService.getPopularMovies();
+  ngOnInit() {}
 }
