@@ -1,3 +1,4 @@
+import { ShowComponent } from './components/show/show.component';
 import { UserService } from './core/services/user.service';
 import { MovieDetailResolver } from './shared/resolvers/movie-detail.resolver';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
@@ -23,7 +24,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DiscoverComponent } from './components/discover/discover.component';
-import { ShowsComponent } from './components/shows/shows.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -42,7 +42,6 @@ export function tokenGetter() {
     HomeComponent,
     NavbarComponent,
     DiscoverComponent,
-    ShowsComponent,
     LoaderComponent,
     NotFoundComponent,
     SeasonComponent,
@@ -51,7 +50,8 @@ export function tokenGetter() {
     ShowListComponent,
     ReadMorePipe,
     MovieListComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    ShowComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+<div>
+  <img class="card-img-top" src="{{ show.posterPath }}" />
+  <i
+    class="fa-check-circle fa-2x subscribe"
+    [ngClass]="[
+      isSubscribed ? 'fas' : 'far',
+      authService?.loggedIn() ? 'show' : 'hide'
+    ]"
+    (click)="subscribeToShow(show.id)"
+  ></i>
+  <div class="card-body">
+    <h5 class="card-title">{{ show.name }}</h5>
+    <p class="card-text">{{ show.overview | readMore }}</p>
+    <a routerLink="/show/{{ show.id }}">View</a>
+  </div>
+</div>
