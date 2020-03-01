@@ -19,6 +19,14 @@
         >
           <a routerLink="/discover" class="nav-link">Discover</a>
         </li>
+        <li
+          *ngIf="isLoggedIn()"
+          class="nav-item"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/subscription" class="nav-link">My Subscriptions</a>
+        </li>
         <div *ngIf="!isLoggedIn()" class="row ml-5">
           <li
             class="nav-item"

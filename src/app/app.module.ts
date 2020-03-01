@@ -1,3 +1,5 @@
+import { SubscriptionResolver } from './shared/resolvers/subscription.resolver';
+import { SubscriptionComponent } from './components/subscription/subscription.component';
 import { ShowComponent } from './components/show/show.component';
 import { UserService } from './core/services/user.service';
 import { MovieDetailResolver } from './shared/resolvers/movie-detail.resolver';
@@ -51,7 +53,8 @@ export function tokenGetter() {
     ReadMorePipe,
     MovieListComponent,
     MovieDetailComponent,
-    ShowComponent
+    ShowComponent,
+    SubscriptionComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +79,7 @@ export function tokenGetter() {
     ShowDetailResolver,
     ShowListResolver,
     MovieDetailResolver,
+    SubscriptionResolver,
     AuthGuard
   ],
   bootstrap: [AppComponent]

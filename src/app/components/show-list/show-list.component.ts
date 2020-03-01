@@ -1,3 +1,4 @@
+import { map } from 'rxjs/operators';
 import { AuthService } from './../../core/services/auth.service';
 import { UserService } from './../../core/services/user.service';
 import { ShowService } from './../../core/services/show.service';
@@ -23,10 +24,16 @@ export class ShowListComponent implements OnInit {
     if (this.authService.loggedIn()) {
       this.subscribedListOfShows = this.showService.getSubscribedShows();
     }
+    this.subscribedListOfShows = this.showService.getSubscribedShows();
   }
 
-  // isSubscribedToShow = (id: string) =>
-  //   this.subscribedListOfShows.pipe(
-
-  //   )
+  isSubscribedToShow = (id: string) => {
+    this.subscribedListOfShows.pipe(
+      map(shows => {
+        this.isSubscribedToShow = JSON.parse(JSON.stringify(shows));
+        console.log(shows);
+      })
+    );
+    return false;
+  };
 }

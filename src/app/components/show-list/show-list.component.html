@@ -3,7 +3,10 @@
   *ngIf="shows | async as shows; else loading"
 >
   <div class="card col-md-3 mb-2" *ngFor="let show of shows">
-    <app-show [show]="show"></app-show>
+    <app-show
+      [show]="show"
+      [isSubscribed]="isSubscribedToShow(show.id)"
+    ></app-show>
   </div>
 </div>
 <ng-template #loading> <app-loader></app-loader></ng-template>
