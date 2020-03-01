@@ -10,7 +10,7 @@ export class SubscriptionResolver implements Resolve<Show[]> {
   constructor(private showService: ShowService, private router: Router) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<Show[]> {
-    return this.showService.getPopularShows().pipe(
+    return this.showService.getSubscribedShows().pipe(
       catchError(error => {
         this.router.navigate(['/']);
         return of(null);
