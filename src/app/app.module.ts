@@ -1,3 +1,6 @@
+import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { SearchService } from './components/search/search.service';
+import { SearchComponent } from './components/search/search.component';
 import { SubscriptionResolver } from './shared/resolvers/subscription.resolver';
 import { SubscriptionComponent } from './components/subscription/subscription.component';
 import { ShowComponent } from './components/show/show.component';
@@ -54,7 +57,9 @@ export function tokenGetter() {
     MovieListComponent,
     MovieDetailComponent,
     ShowComponent,
-    SubscriptionComponent
+    SubscriptionComponent,
+    SearchComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -75,6 +80,7 @@ export function tokenGetter() {
   providers: [
     AuthService,
     UserService,
+    SearchService,
     ErrorInterceptorProvider,
     ShowDetailResolver,
     ShowListResolver,

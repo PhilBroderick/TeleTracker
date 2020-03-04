@@ -1,3 +1,4 @@
+import { SearchComponent } from './components/search/search.component';
 import { SubscriptionComponent } from './components/subscription/subscription.component';
 import { MovieDetailResolver } from './shared/resolvers/movie-detail.resolver';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
@@ -34,6 +35,11 @@ const routes: Routes = [
     component: SubscriptionComponent,
     canActivate: [AuthGuard],
     resolve: { subscriptions: SubscriptionResolver }
+  },
+  {
+    path: 'search',
+    component: SearchComponent,
+    canActivate: [AuthGuard]
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
